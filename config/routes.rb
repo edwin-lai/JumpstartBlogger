@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root 'articles#index'
+  
+  resources :articles do
+    resources :comments
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -33,7 +38,6 @@ Rails.application.routes.draw do
   #     resource :seller
   #   end
 
-  resources :articles
   # Example resource route with more complex sub-resources:
   #   resources :products do
   #     resources :comments
